@@ -1,7 +1,5 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Standings from "components/Standings";
+import Standings from "components/pages/Standings";
 
 function App() {
   return (

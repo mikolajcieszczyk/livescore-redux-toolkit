@@ -1,10 +1,9 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import type { RootState } from "../store/store";
 import { StandingsEntry, StandingsResponse } from "../../types";
 
 const initialState = {
   loading: false,
-  data: {} as StandingsEntry | null,
+  data: {} as StandingsResponse | null,
   error: "" as string | undefined,
 };
 
@@ -23,10 +22,10 @@ export const fetchStandings = createAsyncThunk("standings", async () => {
   try {
     const response = await fetch(url, options);
     const result = await response.json();
-    console.log(result);
+    // console.log(result);
     return result;
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     return undefined;
   }
 });
@@ -41,7 +40,7 @@ export const standingsSlice = createSlice({
     }),
       builder.addCase(fetchStandings.fulfilled, (state, action) => {
         state.loading = false;
-        state.data = action.payload.data;
+        state.data = action.payload;
         state.error = "";
       }),
       builder.addCase(fetchStandings.rejected, (state, action) => {

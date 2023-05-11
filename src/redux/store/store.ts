@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import standingsReducer from "../slices/standingsSlice";
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     standings: standingsReducer,
   },
