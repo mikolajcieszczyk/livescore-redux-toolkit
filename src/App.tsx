@@ -1,10 +1,14 @@
+import MegaMenu from "components/partials/atoms/MegaMenu";
 import "./App.css";
 import Standings from "components/pages/Standings";
 
 function App() {
   return (
     <div className="App">
-      <Standings />
+      <MegaMenu />
+      <main>
+        <Standings />
+      </main>
     </div>
   );
 }

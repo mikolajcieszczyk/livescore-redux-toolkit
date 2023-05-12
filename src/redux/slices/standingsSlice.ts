@@ -15,17 +15,17 @@ export const fetchStandings = createAsyncThunk("standings", async () => {
     method: "GET",
     headers: {
       "x-rapidapi-host": "v3.football.api-sports.io",
-      "x-rapidapi-key": "5224875c5198f5ba22daeeb66cbe2256",
+      "x-rapidapi-key": "ab620ef20458af1ff17beba81c38f6d4",
     },
   };
 
   try {
     const response = await fetch(url, options);
     const result = await response.json();
-    // console.log(result);
+    console.log(result);
     return result;
   } catch (error) {
-    // console.error(error);
+    console.error(error);
     return undefined;
   }
 });

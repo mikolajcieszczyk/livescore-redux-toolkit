@@ -70,3 +70,9 @@ export interface StandingsEntry {
   };
   update: string;
 }
+
+export interface IStandingsRequest {
+  loading: boolean;
+  data: StandingsResponse | null;
+  error?: string;
+}
